@@ -13,17 +13,17 @@ end
 
 return require('packer').startup(function(use)
   -- Packer
+
   use 'wbthomason/packer.nvim'
 
   use 'lewis6991/impatient.nvim'
 
 
   -- Interface
-  use 'drewtempelmeyer/palenight.vim'
-
-  use 'lukas-reineke/indent-blankline.nvim'
 
   use 'kyazdani42/nvim-web-devicons'
+
+  use 'lukas-reineke/indent-blankline.nvim'
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
 
 
   -- Tools
+
   use {
     'junegunn/fzf',
     run = ':call fzf#install()',

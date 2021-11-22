@@ -9,6 +9,7 @@ nnoremap <leader>h :noh<CR>
 nnoremap <leader>t :NvimTreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
+
 " Visual Elements 
 set mouse=a
 set number
@@ -18,13 +19,9 @@ set colorcolumn=101
 if (has('termguicolors'))
   set termguicolors
 endif
-set t_Co=256
-set background=dark
+" set t_Co=256
+" set background=dark
 colorscheme palenight
-
-hi ColorColumn ctermbg=237 guibg=237
-autocmd ColorScheme * hi Keyword NONE
-autocmd ColorScheme * hi Identifier NONE
 
 
 " Indentation
