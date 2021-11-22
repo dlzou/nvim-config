@@ -106,14 +106,14 @@ call s:h("Character", { "fg": s:green }) " a character constant: 'c', '\n'
 call s:h("Number", { "fg": s:dark_yellow }) " a number constant: 234, 0xff
 call s:h("Boolean", { "fg": s:red }) " a boolean constant: TRUE, false
 call s:h("Float", { "fg": s:dark_yellow }) " a floating point constant: 2.3e10
-call s:h("Identifier", { "fg": s:red }) " any variable name
+call s:h("Identifier", { "fg": s:white }) " any variable name
 call s:h("Function", { "fg": s:blue }) " function name (also: methods for classes)
 call s:h("Statement", { "fg": s:purple }) " any statement
 call s:h("Conditional", { "fg": s:purple }) " if, then, else, endif, switch, etc.
 call s:h("Repeat", { "fg": s:purple }) " for, do, while, etc.
 call s:h("Label", { "fg": s:purple }) " case, default, etc.
 call s:h("Operator", { "fg": s:cyan }) " sizeof", "+", "*", etc.
-call s:h("Keyword", { "fg": s:red }) " any other keyword
+call s:h("Keyword", { "fg": s:purple }) " any other keyword
 call s:h("Exception", { "fg": s:purple }) " try, catch, throw
 call s:h("PreProc", { "fg": s:yellow }) " generic Preprocessor
 call s:h("Include", { "fg": s:blue }) " preprocessor #include
