@@ -1,13 +1,23 @@
+" Plugins
 lua require('plugins')
+
+let g:AutoPairsMultilineClose = 0
+
 
 " Key bindings
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>c :Commands<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>t :NvimTreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
+
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-j> <C-o>gj
+inoremap <C-k> <C-o>gk
 
 
 " Visual Elements 
@@ -19,8 +29,6 @@ set colorcolumn=101
 if (has('termguicolors'))
   set termguicolors
 endif
-" set t_Co=256
-" set background=dark
 colorscheme palenight
 
 

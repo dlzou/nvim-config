@@ -35,9 +35,17 @@ return require('packer').startup(function(use)
           component_separators = {left = '|', right = '|'},
           theme = require('lualine.themes.material'),
         },
+        sections = {
+          lualine_c = {
+            {'filename', path = 1, shorting_target = 50}
+          },
+        },
       }
     end,
   }
+
+
+  -- Editor
 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -53,7 +61,16 @@ return require('packer').startup(function(use)
     end,
   }
   
-  use 'nvim-treesitter/playground'
+  use {
+    'nvim-treesitter/playground',
+    disable = true,
+  }
+
+  use 'jiangmiao/auto-pairs'
+
+  use 'tpope/vim-surround'
+
+  use 'tpope/vim-fugitive'
 
 
   -- Tools
