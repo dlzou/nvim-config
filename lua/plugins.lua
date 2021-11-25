@@ -98,10 +98,16 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use 'RRethy/vim-illuminate'
+
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require('lspconfig').pyright.setup {}
+      require('lspconfig').pyright.setup {
+        on_attach = function(client)
+          require('illuminate').on_attach(client)
+        end,
+      }
     end,
   }
 

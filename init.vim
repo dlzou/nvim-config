@@ -2,6 +2,7 @@
 lua require('plugins')
 
 let g:AutoPairsMultilineClose = 0
+let g:Illuminate_delay = 1000
 
 
 " Key bindings
@@ -16,8 +17,6 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-inoremap <C-j> <C-o>gj
-inoremap <C-k> <C-o>gk
 
 
 " Visual Elements 
