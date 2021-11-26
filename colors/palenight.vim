@@ -133,7 +133,7 @@ call s:h("Debug", {}) " debugging statements
 call s:h("Underlined", { "gui": "underline", "cterm": "underline" }) " text that stands out, HTML links
 call s:h("Ignore", {}) " left blank, hidden
 call s:h("Error", { "fg": s:red }) " any erroneous construct
-call s:h("Todo", { "fg": s:purple }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call s:h("Todo", { "fg": s:yellow }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 " }}}
 
@@ -507,10 +507,24 @@ call s:h("debugPC", { "bg": s:blue_purple, "fg": s:black })
 call s:h("jediFunction", { "bg": s:white_mask_3, "fg": s:white })
 call s:h("jediFat", { "bg": s:white_mask_3, "fg": s:blue , "gui": "bold,underline" })
 
-" RRethy/vim-illuminate
+" LSP
+call s:h("LspError", { "fg": s:red })
+call s:h("LspWarning", { "fg": s:yellow })
+call s:h("LspInformation", { "fg": s:green })
+call s:h("LspHint", { "fg": s:cyan })
+
+hi link LspDiagnosticsDefaultError LspError
+hi link LspDiagnosticsVirtualTextError LspDiagnosticsDefaultError
+hi link LspDiagnosticsDefaultWarning LspWarning
+hi link LspDiagnosticsVirtualTextWarning LspDiagnosticsDefaultWarning
+hi link LspDiagnosticsDefaultInformation LspInformation
+hi link LspDiagnosticsVirtualTextInformation LspDiagnosticsDefaultInformation
+hi link LspDiagnosticsDefaultHint LspHint
+hi link LspDiagnosticsVirtualTextHint LspDiagnosticsDefaultHint
+
 hi link LspReferenceText VisualNOS
-hi link LspReferenceWrite VisualNOS
-hi link LspReferenceRead VisualNOS
+hi link LspReferenceRead LspReferenceText
+hi link LspReferenceWrite LspReferenceText
 
 " }}}
 

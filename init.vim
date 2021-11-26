@@ -12,26 +12,25 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>c :Commands<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>h :noh<CR>
+nnoremap <leader>ld :TroubleToggle<CR>
 nnoremap <leader>t :NvimTreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
-
-" Visual Elements 
+" Settings
 set mouse=a
+set updatetime=500
+
 set number
 set cursorline
 set colorcolumn=101
+set updatetime=500
 
 if (has('termguicolors'))
   set termguicolors
 endif
 colorscheme palenight
 
-
-" Indentation
 set expandtab  " Use spaces insteads of tabs
 set shiftwidth=2
 set softtabstop=2
