@@ -113,7 +113,7 @@ return require('packer').startup(function(use)
         },
         on_attach = function(client)
           require('illuminate').on_attach(client)
-          vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({show_header=false,focusable=false})]]
+          vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({show_header=false,focusable=false,close_events={'CursorMoved','InsertEnter'}})]]
         end,
       }
     end,
