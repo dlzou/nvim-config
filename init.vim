@@ -2,7 +2,7 @@
 lua require('plugins')
 
 let g:AutoPairsMultilineClose = 0
-let g:Illuminate_delay = 1000
+let g:Illuminate_delay = 500
 
 
 " Key bindings

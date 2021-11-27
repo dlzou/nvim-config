@@ -98,14 +98,22 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use 'mhinz/vim-signify'
+
   use 'RRethy/vim-illuminate'
 
   use {
     'neovim/nvim-lspconfig',
     config = function()
       require('lspconfig').pyright.setup {
+        handlers = {
+          ['textDocument/publishDiagnostics'] = vim.lsp.with(
+            vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = false}
+          ),
+        },
         on_attach = function(client)
           require('illuminate').on_attach(client)
+          vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({show_header=false,focusable=false})]]
         end,
       }
     end,
@@ -115,7 +123,9 @@ return require('packer').startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require('trouble').setup {}
+      require('trouble').setup {
+        mode = 'lsp_document_diagnostics',
+      }
     end,
   }
 

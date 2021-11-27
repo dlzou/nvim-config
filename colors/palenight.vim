@@ -508,19 +508,15 @@ call s:h("jediFunction", { "bg": s:white_mask_3, "fg": s:white })
 call s:h("jediFat", { "bg": s:white_mask_3, "fg": s:blue , "gui": "bold,underline" })
 
 " LSP
-call s:h("LspError", { "fg": s:red })
-call s:h("LspWarning", { "fg": s:yellow })
-call s:h("LspInformation", { "fg": s:green })
-call s:h("LspHint", { "fg": s:cyan })
+call s:h("LspDiagnosticsDefaultError", { "fg": s:red })
+call s:h("LspDiagnosticsDefaultWarning", { "fg": s:yellow })
+call s:h("LspDiagnosticsDefaultInformation", { "fg": s:green })
+call s:h("LspDiagnosticsDefaultHint", { "fg": s:cyan })
 
-hi link LspDiagnosticsDefaultError LspError
-hi link LspDiagnosticsVirtualTextError LspDiagnosticsDefaultError
-hi link LspDiagnosticsDefaultWarning LspWarning
-hi link LspDiagnosticsVirtualTextWarning LspDiagnosticsDefaultWarning
-hi link LspDiagnosticsDefaultInformation LspInformation
-hi link LspDiagnosticsVirtualTextInformation LspDiagnosticsDefaultInformation
-hi link LspDiagnosticsDefaultHint LspHint
-hi link LspDiagnosticsVirtualTextHint LspDiagnosticsDefaultHint
+call s:h("LspDiagnosticsUnderlineError", { "gui": "undercurl", "sp": s:red })
+call s:h("LspDiagnosticsUnderlineWarning", { "gui": "undercurl", "sp": s:yellow })
+call s:h("LspDiagnosticsUnderlineInformation", { "gui": "undercurl", "sp": s:green })
+call s:h("LspDiagnosticsUnderlineHint", { "gui": "undercurl", "sp": s:cyan })
 
 hi link LspReferenceText VisualNOS
 hi link LspReferenceRead LspReferenceText
