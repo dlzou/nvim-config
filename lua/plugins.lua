@@ -104,19 +104,7 @@ return require('packer').startup(function(use)
 
   use {
     'neovim/nvim-lspconfig',
-    config = function()
-      require('lspconfig').pyright.setup {
-        handlers = {
-          ['textDocument/publishDiagnostics'] = vim.lsp.with(
-            vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = false}
-          ),
-        },
-        on_attach = function(client)
-          require('illuminate').on_attach(client)
-          vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({show_header=false,focusable=false,close_events={'CursorMoved','InsertEnter'}})]]
-        end,
-      }
-    end,
+    config = require('mylsp').config,
   }
 
   use {
