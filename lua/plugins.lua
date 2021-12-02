@@ -92,20 +92,24 @@ return require('packer').startup(function(use)
   use 'mbbill/undotree'
 
   use {
-    'folke/which-key.nvim',
-    config = function()
-      require('which-key').setup {}
-    end,
-  }
-
-  use 'mhinz/vim-signify'
-
-  use 'RRethy/vim-illuminate'
-
-  use {
     'neovim/nvim-lspconfig',
     config = require('mylsp').config,
   }
+
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  use 'hrsh7th/cmp-vsnip'
+
+  use 'hrsh7th/vim-vsnip'
+
+  use {
+    'hrsh7th/nvim-cmp',
+    config = require('mycmp').config,
+  }
+  
+  use 'mhinz/vim-signify'
+
+  use 'RRethy/vim-illuminate'
 
   use {
     'folke/trouble.nvim',
