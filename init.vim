@@ -11,6 +11,7 @@ nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>c :Commands<CR>
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>ld :TroubleToggle<CR>
 nnoremap <leader>t :NvimTreeToggle<CR>

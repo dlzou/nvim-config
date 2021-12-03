@@ -70,7 +70,17 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-surround'
 
+  use 'tpope/vim-commentary'
+
   use 'tpope/vim-fugitive'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('gitsigns').setup {}
+    end,
+  }
 
 
   -- Tools
@@ -93,21 +103,23 @@ return require('packer').startup(function(use)
 
   use {
     'neovim/nvim-lspconfig',
-    config = require('mylsp').config,
+    config = function()
+      require('config.lsp')
+    end,
   }
 
   use 'hrsh7th/cmp-nvim-lsp'
 
-  use 'hrsh7th/cmp-vsnip'
+  use 'L3MON4D3/LuaSnip'
 
-  use 'hrsh7th/vim-vsnip'
+  use 'saadparwaiz1/cmp_luasnip'
 
   use {
     'hrsh7th/nvim-cmp',
-    config = require('mycmp').config,
+    config = function()
+      require('config.cmp')
+    end,
   }
-  
-  use 'mhinz/vim-signify'
 
   use 'RRethy/vim-illuminate'
 
