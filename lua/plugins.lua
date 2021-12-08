@@ -23,8 +23,6 @@ return require('packer').startup(function(use)
 
   use 'kyazdani42/nvim-web-devicons'
 
-  use 'lukas-reineke/indent-blankline.nvim'
-
   use {
     'nvim-lualine/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -41,6 +39,16 @@ return require('packer').startup(function(use)
           },
         },
       }
+    end,
+  }
+
+  use 'mhinz/vim-startify'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('gitsigns').setup {}
     end,
   }
 
@@ -66,6 +74,8 @@ return require('packer').startup(function(use)
     disable = true,
   }
 
+  use 'lukas-reineke/indent-blankline.nvim'
+
   use 'jiangmiao/auto-pairs'
 
   use 'tpope/vim-surround'
@@ -73,14 +83,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
 
   use 'tpope/vim-fugitive'
-
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-    config = function()
-      require('gitsigns').setup {}
-    end,
-  }
 
 
   -- Tools

@@ -1,14 +1,17 @@
 " Plugins
 lua require('plugins')
 
+let g:startify_custom_header = startify#pad(split(system('figlet -w 100 Neovim'), '\n')[:-2])
 let g:AutoPairsCenterLine = 0
 let g:AutoPairsMultilineClose = 0
 let g:Illuminate_delay = 500
+let g:fzf_layout = {'down': '40%'}
 
 
 " Key bindings
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap Y y$
 nnoremap <leader>c :Commands<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>ff :Files<CR>
@@ -41,3 +44,9 @@ set softtabstop=2
 set autoindent  " Indent on new line
 
 set hidden
+
+
+" Neovide
+set guifont=Iosevka:h14
+let g:neovide_cursor_animation_length = 0.03
+
