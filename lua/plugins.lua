@@ -73,6 +73,10 @@ return require('packer').startup(function(use)
     'nvim-treesitter/playground',
     disable = true,
   }
+  
+  use 'rhysd/conflict-marker.vim'
+
+  use 'tpope/vim-fugitive'
 
   use 'lukas-reineke/indent-blankline.nvim'
 
@@ -81,8 +85,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
 
   use 'tpope/vim-commentary'
-
-  use 'tpope/vim-fugitive'
 
 
   -- Tools

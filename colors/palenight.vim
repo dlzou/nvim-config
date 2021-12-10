@@ -76,10 +76,13 @@ let s:colors = palenight#GetColors()
 let s:red = s:colors.red
 let s:light_red = s:colors.light_red
 let s:dark_red = s:colors.dark_red
+let s:bg_red = s:colors.bg_red
 let s:green = s:colors.green
+let s:bg_green = s:colors.bg_green
 let s:yellow = s:colors.yellow
 let s:dark_yellow = s:colors.dark_yellow
 let s:blue = s:colors.blue
+let s:bg_blue = s:colors.bg_blue
 let s:purple = s:colors.purple
 let s:blue_purple = s:colors.blue_purple
 let s:cyan = s:colors.cyan
@@ -104,7 +107,7 @@ call s:h("Constant", { "fg": s:cyan }) " any constant
 call s:h("String", { "fg": s:green }) " a string constant: "this is a string"
 call s:h("Character", { "fg": s:green }) " a character constant: 'c', '\n'
 call s:h("Number", { "fg": s:dark_yellow }) " a number constant: 234, 0xff
-call s:h("Boolean", { "fg": s:red }) " a boolean constant: TRUE, false
+call s:h("Boolean", { "fg": s:light_red }) " a boolean constant: TRUE, false
 call s:h("Float", { "fg": s:dark_yellow }) " a floating point constant: 2.3e10
 call s:h("Identifier", { "fg": s:white }) " any variable name
 call s:h("Function", { "fg": s:blue }) " function name (also: methods for classes)
@@ -521,6 +524,15 @@ call s:h("LspDiagnosticsUnderlineHint", { "gui": "undercurl", "sp": s:cyan })
 hi link LspReferenceText VisualNOS
 hi link LspReferenceRead LspReferenceText
 hi link LspReferenceWrite LspReferenceText
+
+" rhysd/conflict-marker.vim
+call s:h("ConflictMarkerBegin", { "bg": s:bg_red })
+call s:h("ConflictMarkerOurs", { "bg": s:bg_red })
+call s:h("ConflictMarkerCommonAncestors", { "bg": s:bg_blue })
+call s:h("ConflictMarkerCommonAncestorsHunk", { "bg": s:bg_blue })
+call s:h("ConflictMarkerSeparator", { "bg": s:bg_blue })
+call s:h("ConflictMarkerTheirs", { "bg": s:bg_green })
+call s:h("ConflictMarkerEnd", { "bg": s:bg_green })
 
 " }}}
 
