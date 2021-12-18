@@ -27,3 +27,10 @@ lspconfig.ccls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+-- gopls
+lspconfig.gopls.setup {
+  handlers = handlers,
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
