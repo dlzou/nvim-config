@@ -1,3 +1,7 @@
+-- vim:foldmethod=marker
+
+-- Bootstrapping Packer {{{
+
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -10,6 +14,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     install_path,
   })
 end
+-- }}}
 
 return require('packer').startup(function(use)
   -- Packer
@@ -19,7 +24,7 @@ return require('packer').startup(function(use)
   use 'lewis6991/impatient.nvim'
 
 
-  -- Interface
+  -- Interface {{{
 
   use 'kyazdani42/nvim-web-devicons'
 
@@ -52,8 +57,9 @@ return require('packer').startup(function(use)
     end,
   }
 
+  -- }}}
 
-  -- Editor
+  -- Editor {{{
 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -78,7 +84,17 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-fugitive'
 
-  use 'lukas-reineke/indent-blankline.nvim'
+  use { 
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('indent_blankline').setup {
+        show_end_of_line = true,
+        show_current_context = true,
+        buftype_exclude = {'terminal'},
+        filetype_exclude = {'help', 'packer', 'startify'},
+      }
+    end,
+  }
 
   use 'jiangmiao/auto-pairs'
 
@@ -86,8 +102,9 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-commentary'
 
+  -- }}}
 
-  -- Tools
+  -- Tools {{{
 
   use {
     'junegunn/fzf',
@@ -132,9 +149,11 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
       require('trouble').setup {
-        mode = 'lsp_document_diagnostics',
+        mode = 'document_diagnostics',
       }
     end,
   }
+  
+  -- }}}
 
 end)
