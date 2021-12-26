@@ -5,6 +5,8 @@
 lua require('plugins')
 
 let g:startify_custom_header = startify#pad(split(system('figlet -f slant Neovim'), '\n')[:-2])
+let g:startify_files_number = 8
+let g:startify_session_persistence = 1
 let g:AutoPairsCenterLine = 0
 let g:AutoPairsMultilineClose = 0
 let g:Illuminate_delay = 500
@@ -32,16 +34,24 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fk :b#<bar>bd#<CR>
 
-nnoremap <leader>gv :Gvdiffsplit<Space>
 nnoremap <leader>gdh :diffget //2<CR>
 nnoremap <leader>gdl :diffget //3<CR>
+nnoremap <leader>gv :Gvdiffsplit<Space>
 
 nnoremap <leader>ld :TroubleToggle<Space>lsp_definitions<CR>
 nnoremap <leader>ll :TroubleToggle<Space>lsp_document_diagnostics<CR>
 nnoremap <leader>lr :TroubleToggle<Space>lsp_references<CR>
 
 nnoremap <leader>n :noh<CR>
+
+nnoremap <leader>sc :SClose<CR>
+nnoremap <leader>sd :SDelete<CR>
+nnoremap <leader>sl :SLoad<CR>
+nnoremap <leader>ss :SSave<CR>
+nnoremap <leader>st :Startify<CR>
+
 nnoremap <leader>t :NvimTreeToggle<CR>
+
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " }}}
@@ -67,6 +77,8 @@ set softtabstop=2
 set autoindent  " Indent on new line
 
 set hidden
+
+autocmd TermOpen * setlocal nonumber
 
 " }}}
 
