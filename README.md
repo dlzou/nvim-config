@@ -1,4 +1,4 @@
-# Neovim Configuration
+# My Neovim Configuration
 
 An unholy chimera of Vimscript and Lua.
 

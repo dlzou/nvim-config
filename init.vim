@@ -91,8 +91,9 @@ autocmd TermOpen * setlocal nonumber
 
 " }}}
 
-" Neovide
+" Neovide {{{
 
 set guifont=Iosevka:h14
 let g:neovide_cursor_animation_length = 0.02
 
+" }}}

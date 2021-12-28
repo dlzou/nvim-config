@@ -22,6 +22,9 @@ telescope.setup {
   pickers = {
     buffers = {
       theme = 'ivy',
+      layout_config = {
+        height = 20,
+      },
       show_all_buffers = true,
       sort_lastused = true,
       mappings = {
