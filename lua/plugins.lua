@@ -106,12 +106,26 @@ return require('packer').startup(function(use)
 
   -- Tools {{{
 
+  -- use {
+  --   'junegunn/fzf',
+  --   run = ':call fzf#install()',
+  -- }
+  --
+  -- use 'junegunn/fzf.vim'
+
   use {
-    'junegunn/fzf',
-    run = ':call fzf#install()',
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
   }
-  use 'junegunn/fzf.vim'
-  
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('config.telescope')
+    end,
+  }
+
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',

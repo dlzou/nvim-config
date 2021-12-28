@@ -5,12 +5,14 @@
 lua require('plugins')
 
 let g:startify_custom_header = startify#pad(split(system('figlet -f slant Neovim'), '\n')[:-2])
-let g:startify_files_number = 8
+let g:startify_files_number = 5
 let g:startify_session_persistence = 1
+
 let g:AutoPairsCenterLine = 0
 let g:AutoPairsMultilineClose = 0
+
 let g:Illuminate_delay = 500
-let g:fzf_layout = {'down': '40%'}
+
 let g:conflict_marker_begin = '^<<<<<<< .*$'
 let g:conflict_marker_end = '^>>>>>>> .*$'
 
@@ -20,27 +22,34 @@ let g:conflict_marker_end = '^>>>>>>> .*$'
 
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
-nnoremap Y y$
 
+nnoremap p ]p
 xnoremap <C-c> "+y
 inoremap <C-v> <C-r>+
 cnoremap <C-v> <C-r>+
+
 inoremap <C-d> <Del>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
 
-nnoremap <leader>c :Commands<CR>
+nnoremap <leader>c :Telescope commands<CR>
 
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fg :Rg<CR>
-nnoremap <leader>fk :b#<bar>bd#<CR>
+nnoremap <leader>fb :Telescope buffers<CR>
+nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <leader>fg :Telescope live_grep<CR>
 
 nnoremap <leader>gdh :diffget //2<CR>
 nnoremap <leader>gdl :diffget //3<CR>
 nnoremap <leader>gv :Gvdiffsplit<Space>
 
 nnoremap <leader>ld :TroubleToggle<Space>lsp_definitions<CR>
-nnoremap <leader>ll :TroubleToggle<Space>lsp_document_diagnostics<CR>
+nnoremap <leader>ll :TroubleToggle<Space>document_diagnostics<CR>
 nnoremap <leader>lr :TroubleToggle<Space>lsp_references<CR>
+nnoremap <leader>ls :Telescope<Space>lsp_workspace_symbols<Space>query=
 
 nnoremap <leader>n :noh<CR>
 

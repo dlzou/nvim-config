@@ -433,45 +433,11 @@ call s:h("mkdURL", { "fg": s:light_red })
 " call s:h("xmlTag", { "fg": s:red })
 " call s:h("xmlTagName", { "fg": s:red })
 
-" " PHP
-" call s:h("phpInclude", { "fg": s:purple })
-" call s:h("phpClass", { "fg": s:yellow })
-" call s:h("phpClasses", { "fg": s:yellow })
-" call s:h("phpFunction", { "fg": s:blue })
-" call s:h("phpType", { "fg": s:purple })
-" call s:h("phpKeyword", { "fg": s:purple })
-" call s:h("phpVarSelector", { "fg": s:white })
-" call s:h("phpIdentifier", { "fg": s:white })
-" call s:h("phpMethod", { "fg": s:blue })
-" call s:h("phpBoolean", { "fg": s:blue })
-" call s:h("phpParent", { "fg": s:white })
-" call s:h("phpOperator", { "fg": s:purple })
-" call s:h("phpRegion", { "fg": s:purple })
-" call s:h("phpUseNamespaceSeparator", { "fg": s:white })
-" call s:h("phpClassNamespaceSeparator", { "fg": s:white })
-" call s:h("phpDocTags", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
-" call s:h("phpDocParam", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
-
-" " Dart
-" call s:h("dartLibrary", { "fg": s:purple})
-" call s:h("dartTypedef", { "fg": s:purple})
-" call s:h("dartClassDecl", { "fg": s:purple})
-" call s:h("dartCoreType", { "fg": s:purple})
-" call s:h("dartStorageClass", { "fg": s:purple})
-" call s:h("dartOperator", { "fg": s:purple})
-" call s:h("dartMetadata", { "fg": s:purple})
-" call s:h("dartKeyword", { "fg": s:purple})
-
 " }}}
 
 " Plugin Highlighting {{{
 
-" airblade/vim-gitgutter
-hi link GitGutterAdd    SignifySignAdd
-hi link GitGutterChange SignifySignChange
-hi link GitGutterDelete SignifySignDelete
-
-" mhinz/vim-signify
+" mhinz/vim-signify and lewis6991/gitsigns.nvim
 call s:h("SignifySignAdd", { "fg": s:green })
 call s:h("SignifySignChange", { "fg": s:yellow })
 call s:h("SignifySignDelete", { "fg": s:red })
@@ -503,20 +469,16 @@ call s:h("VistaScopeKind", { "fg": s:yellow })
 call s:h("debugBreakpoint", { "fg": s:blue_purple })
 call s:h("debugPC", { "bg": s:blue_purple, "fg": s:black })
 
-" davidhalter/jedi-vim
-call s:h("jediFunction", { "bg": s:white_mask_3, "fg": s:white })
-call s:h("jediFat", { "bg": s:white_mask_3, "fg": s:blue , "gui": "bold,underline" })
-
 " LSP
-call s:h("LspDiagnosticsDefaultError", { "fg": s:red })
-call s:h("LspDiagnosticsDefaultWarning", { "fg": s:yellow })
-call s:h("LspDiagnosticsDefaultInformation", { "fg": s:green })
-call s:h("LspDiagnosticsDefaultHint", { "fg": s:cyan })
+call s:h("DiagnosticError", { "fg": s:red })
+call s:h("DiagnosticWarn", { "fg": s:yellow })
+call s:h("DiagnosticInfo", { "fg": s:green })
+call s:h("DiagnosticHint", { "fg": s:cyan })
 
-call s:h("LspDiagnosticsUnderlineError", { "gui": "undercurl", "sp": s:red })
-call s:h("LspDiagnosticsUnderlineWarning", { "gui": "undercurl", "sp": s:yellow })
-call s:h("LspDiagnosticsUnderlineInformation", { "gui": "undercurl", "sp": s:green })
-call s:h("LspDiagnosticsUnderlineHint", { "gui": "undercurl", "sp": s:cyan })
+call s:h("DiagnosticUnderlineError", { "gui": "undercurl", "sp": s:red })
+call s:h("DiagnosticUnderlineWarn", { "gui": "undercurl", "sp": s:yellow })
+call s:h("DiagnosticUnderlineInfo", { "gui": "undercurl", "sp": s:green })
+call s:h("DiagnosticUnderlineHint", { "gui": "undercurl", "sp": s:cyan })
 
 hi link LspReferenceText VisualNOS
 hi link LspReferenceRead LspReferenceText
