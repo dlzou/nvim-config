@@ -21,7 +21,9 @@ let g:conflict_marker_end = '^>>>>>>> .*$'
 " Key bindings {{{
 
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 
 nnoremap p ]p
 xnoremap <C-c> "+y
