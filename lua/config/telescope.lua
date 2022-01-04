@@ -6,6 +6,7 @@ telescope.setup {
     mappings = {
       i = {
         ['<Esc>'] = actions.close,
+        ['<C-c>'] = false,
       },
     },
     vimgrep_arguments = {
@@ -29,8 +30,14 @@ telescope.setup {
       sort_lastused = true,
       mappings = {
         i = {
-          ['<C-k>'] = 'delete_buffer',
+          ['<C-c>'] = 'delete_buffer',
         },
+      },
+    },
+    commands = {
+      theme = 'ivy',
+      layout_config = {
+        height = 20,
       },
     },
     find_files = {

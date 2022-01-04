@@ -1,20 +1,33 @@
 " vim:foldmethod=marker
 
-" Plugins {{{
+" Settings {{{
 
-lua require('plugins')
+if (has('termguicolors'))
+  set termguicolors
+endif
+colorscheme palenight
 
-let g:startify_custom_header = startify#pad(split(system('figlet -f slant Neovim'), '\n')[:-2])
-let g:startify_files_number = 5
-let g:startify_session_persistence = 1
+set mouse=a
+set updatetime=500
+set notimeout
+set hidden
+set splitright
 
-let g:AutoPairsCenterLine = 0
-let g:AutoPairsMultilineClose = 0
+set number
+set cursorline
+set colorcolumn=101
 
-let g:Illuminate_delay = 500
+" Default tab settings, overridden by tpope/vim-sleuth
+set expandtab  " Use spaces insteads of tabs
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set autoindent  " Indent on new line
 
-let g:conflict_marker_begin = '^<<<<<<< .*$'
-let g:conflict_marker_end = '^>>>>>>> .*$'
+set list
+set listchars=tab:>-,trail:!
+
+autocmd TermOpen * setlocal nonumber
 
 " }}}
 
@@ -26,9 +39,11 @@ nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 
 nnoremap p ]p
+nnoremap P ]P
 xnoremap <C-c> "+y
-inoremap <C-v> <C-r>+
 cnoremap <C-v> <C-r>+
+inoremap <C-v> <C-g>u<C-r>+
+inoremap <CR> <C-g>u<CR>
 
 inoremap <C-d> <Del>
 inoremap <C-f> <Right>
@@ -37,6 +52,8 @@ inoremap <C-p> <Up>
 inoremap <C-n> <Down>
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
+
+nmap <Space> <leader>
 
 nnoremap <leader>c :Telescope commands<CR>
 
@@ -67,29 +84,21 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 " }}}
 
-" Settings {{{
+" Plugins {{{
 
-set mouse=a
-set updatetime=500
-set notimeout
+lua require('plugins')
 
-set number
-set cursorline
-set colorcolumn=101
+let g:startify_custom_header = startify#pad(split(system('figlet -f slant Neovim'), '\n')[:-2])
+let g:startify_files_number = 5
+let g:startify_session_persistence = 1
 
-if (has('termguicolors'))
-  set termguicolors
-endif
-colorscheme palenight
+let g:AutoPairsCenterLine = 0
+let g:AutoPairsMultilineClose = 0
 
-set expandtab  " Use spaces insteads of tabs
-set shiftwidth=2
-set softtabstop=2
-set autoindent  " Indent on new line
+let g:Illuminate_delay = 500
 
-set hidden
-
-autocmd TermOpen * setlocal nonumber
+let g:conflict_marker_begin = '^<<<<<<< .*$'
+let g:conflict_marker_end = '^>>>>>>> .*$'
 
 " }}}
 

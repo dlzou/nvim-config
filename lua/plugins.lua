@@ -88,7 +88,6 @@ return require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require('indent_blankline').setup {
-        show_end_of_line = true,
         show_current_context = true,
         buftype_exclude = {'terminal'},
         filetype_exclude = {'help', 'packer', 'startify'},
@@ -102,16 +101,11 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-commentary'
 
+  use 'tpope/vim-sleuth'
+
   -- }}}
 
   -- Tools {{{
-
-  -- use {
-  --   'junegunn/fzf',
-  --   run = ':call fzf#install()',
-  -- }
-  --
-  -- use 'junegunn/fzf.vim'
 
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
