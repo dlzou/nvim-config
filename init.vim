@@ -31,7 +31,7 @@ autocmd TermOpen * setlocal nonumber
 
 " }}}
 
-" Key bindings {{{
+" Global key bindings {{{
 
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -55,32 +55,27 @@ inoremap <C-e> <C-o>$
 
 nmap <Space> <leader>
 
-nnoremap <leader>c :Telescope commands<CR>
+nnoremap <leader>c <cmd>Telescope commands<CR>
 
-nnoremap <leader>fb :Telescope buffers<CR>
-nnoremap <leader>ff :Telescope find_files<CR>
-nnoremap <leader>fg :Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 
-nnoremap <leader>gdh :diffget //2<CR>
-nnoremap <leader>gdl :diffget //3<CR>
-nnoremap <leader>gv :Gvdiffsplit<Space>
+nnoremap <leader>gdh <cmd>diffget //2<CR>
+nnoremap <leader>gdl <cmd>diffget //3<CR>
+nnoremap <leader>gv <cmd>Gvdiffsplit<Space>
 
-nnoremap <leader>ld :TroubleToggle<Space>lsp_definitions<CR>
-nnoremap <leader>ll :TroubleToggle<Space>document_diagnostics<CR>
-nnoremap <leader>lr :TroubleToggle<Space>lsp_references<CR>
-nnoremap <leader>ls :Telescope<Space>lsp_workspace_symbols<Space>query=
+nnoremap <leader>n <cmd>noh<CR>
 
-nnoremap <leader>n :noh<CR>
+nnoremap <leader>sc <cmd>SClose<CR>
+nnoremap <leader>sd <cmd>SDelete<CR>
+nnoremap <leader>sl <cmd>SLoad<CR>
+nnoremap <leader>ss <cmd>SSave<CR>
+nnoremap <leader>st <cmd>Startify<CR>
 
-nnoremap <leader>sc :SClose<CR>
-nnoremap <leader>sd :SDelete<CR>
-nnoremap <leader>sl :SLoad<CR>
-nnoremap <leader>ss :SSave<CR>
-nnoremap <leader>st :Startify<CR>
+nnoremap <leader>t <cmd>NvimTreeToggle<CR>
 
-nnoremap <leader>t :NvimTreeToggle<CR>
-
-nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <leader>u <cmd>UndotreeToggle<CR>
 
 " }}}
 

@@ -11,7 +11,18 @@ vim.diagnostic.config({
 
 local handlers = {}
 
-local on_attach = function(client)
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local opts = {
+    noremap = true,
+    silent = true,
+  }
+  buf_set_keymap('n', '<leader>ld', '<cmd>TroubleToggle<Space>lsp_definitions<CR>', opts)
+  buf_set_keymap('n', '<leader>ll', '<cmd>TroubleToggle<Space>document_diagnostics<CR>', opts)
+  buf_set_keymap('n', '<leader>ln', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<leader>lr', '<cmd>TroubleToggle<Space>lsp_references<CR>', opts)
+  buf_set_keymap('n', '<leader>ls', '<cmd>Telescope<Space>lsp_workspace_symbols<Space>query=', opts)
+
   require('illuminate').on_attach(client)
   vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable=false, scope='cursor', close_events={'CursorMoved', 'InsertEnter', 'BufLeave', 'WinLeave', 'WinScrolled'}})]]
 end
