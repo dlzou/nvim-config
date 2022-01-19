@@ -38,8 +38,8 @@ xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 
-nnoremap p ]p
-nnoremap P ]P
+nnoremap p p=`]
+nnoremap P P=`[
 xnoremap <C-c> "+y
 cnoremap <C-v> <C-r>+
 inoremap <C-v> <C-g>u<C-r>+
@@ -53,6 +53,8 @@ inoremap <C-n> <Down>
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 
+tnoremap <Esc> <C-\><C-n>
+
 nmap <Space> <leader>
 
 nnoremap <leader>c <cmd>Telescope commands<CR>
@@ -60,6 +62,7 @@ nnoremap <leader>c <cmd>Telescope commands<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <leader>ft <cmd>NvimTreeToggle<CR>
 
 nnoremap <leader>gdh <cmd>diffget //2<CR>
 nnoremap <leader>gdl <cmd>diffget //3<CR>
@@ -73,7 +76,7 @@ nnoremap <leader>sl <cmd>SLoad<CR>
 nnoremap <leader>ss <cmd>SSave<CR>
 nnoremap <leader>st <cmd>Startify<CR>
 
-nnoremap <leader>t <cmd>NvimTreeToggle<CR>
+nnoremap <leader>t <cmd>terminal<CR>
 
 nnoremap <leader>u <cmd>UndotreeToggle<CR>
 
