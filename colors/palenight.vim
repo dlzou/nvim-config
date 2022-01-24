@@ -83,6 +83,7 @@ let s:yellow = s:colors.yellow
 let s:dark_yellow = s:colors.dark_yellow
 let s:blue = s:colors.blue
 let s:bg_blue = s:colors.bg_blue
+let s:ref_blue = s:colors.ref_blue
 let s:purple = s:colors.purple
 let s:blue_purple = s:colors.blue_purple
 let s:cyan = s:colors.cyan
@@ -90,7 +91,7 @@ let s:white = s:colors.white
 let s:black = s:colors.black
 let s:visual_black = s:colors.visual_black " Black out selected text in 16-color visual mode
 let s:comment_grey = s:colors.comment_grey
-let s:gutter_fg_grey = s:colors.gutter_fg_grey
+let s:gutter_grey = s:colors.gutter_grey
 let s:cursor_grey = s:colors.cursor_grey
 let s:visual_grey = s:colors.visual_grey
 let s:menu_grey = s:colors.menu_grey
@@ -159,9 +160,9 @@ call s:h("Folded", { "bg": s:cursor_grey, "fg": s:comment_grey }) " line used fo
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:yellow, "bg": s:comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
-call s:h("LineNr", { "fg": s:gutter_fg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+call s:h("LineNr", { "fg": s:gutter_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("MatchParen", { "fg": s:yellow, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
+call s:h("MatchParen", { "fg": s:yellow, "bg": s:ref_blue, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
@@ -480,7 +481,7 @@ call s:h("DiagnosticUnderlineWarn", { "gui": "undercurl", "sp": s:yellow })
 call s:h("DiagnosticUnderlineInfo", { "gui": "undercurl", "sp": s:green })
 call s:h("DiagnosticUnderlineHint", { "gui": "undercurl", "sp": s:cyan })
 
-hi link LspReferenceText VisualNOS
+call s:h("LspReferenceText", {"bg": s:ref_blue})
 hi link LspReferenceRead LspReferenceText
 hi link LspReferenceWrite LspReferenceText
 
