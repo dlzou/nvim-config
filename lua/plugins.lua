@@ -69,7 +69,12 @@ return require('packer').startup(function(use)
           enable = true,
           additional_vim_regex_highlighting = false,
         },
-        indent = {enable = true},
+        indent = {
+          enable = true,
+          disable = {
+            "python",
+          }
+        },
       }
     end,
   }
@@ -123,7 +128,9 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require('nvim-tree').setup {}
+      require('nvim-tree').setup {
+        disable_netrw = false,
+      }
     end,
   }
 
@@ -161,6 +168,13 @@ return require('packer').startup(function(use)
     end,
   }
   
+  -- }}}
+
+  -- Languages {{{
+
+  -- Python
+  use "Vimjas/vim-python-pep8-indent"
+
   -- }}}
 
 end)
