@@ -81,9 +81,9 @@ let s:green = s:colors.green
 let s:bg_green = s:colors.bg_green
 let s:yellow = s:colors.yellow
 let s:dark_yellow = s:colors.dark_yellow
+let s:bg_yellow = s:colors.bg_yellow
 let s:blue = s:colors.blue
 let s:bg_blue = s:colors.bg_blue
-let s:ref_blue = s:colors.ref_blue
 let s:purple = s:colors.purple
 let s:blue_purple = s:colors.blue_purple
 let s:cyan = s:colors.cyan
@@ -150,9 +150,9 @@ call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
 call s:h("CursorColumn", { "bg": s:cursor_grey }) " the screen column that the cursor is in when 'cursorcolumn' is set
 call s:h("CursorLine", { "bg": s:cursor_grey }) " the screen line that the cursor is in when 'cursorline' is set
 call s:h("Directory", { "fg": s:blue }) " directory names (and other special names in listings)
-call s:h("DiffAdd", { "bg": s:green, "fg": s:black }) " diff mode: Added line
-call s:h("DiffChange", { "bg": s:yellow, "fg": s:black }) " diff mode: Changed line
-call s:h("DiffDelete", { "bg": s:red, "fg": s:black }) " diff mode: Deleted line
+call s:h("DiffAdd", { "bg": s:bg_green }) " diff mode: Added line
+call s:h("DiffChange", { "bg": s:bg_blue }) " diff mode: Changed line
+call s:h("DiffDelete", { "bg": s:bg_red }) " diff mode: Deleted line
 call s:h("DiffText", { "bg": s:black, "fg": s:yellow }) " diff mode: Changed text within a changed line
 call s:h("ErrorMsg", { "fg": s:red }) " error messages on the command line
 call s:h("VertSplit", { "fg": s:vertsplit }) " the column separating vertically split windows
@@ -162,7 +162,7 @@ call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:yellow, "bg": s:comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
 call s:h("LineNr", { "fg": s:gutter_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("MatchParen", { "fg": s:yellow, "bg": s:ref_blue, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
+call s:h("MatchParen", { "fg": s:yellow, "bg": s:bg_blue, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
@@ -438,10 +438,10 @@ call s:h("mkdURL", { "fg": s:light_red })
 
 " Plugin Highlighting {{{
 
-" mhinz/vim-signify and lewis6991/gitsigns.nvim
-call s:h("SignifySignAdd", { "fg": s:green })
-call s:h("SignifySignChange", { "fg": s:yellow })
-call s:h("SignifySignDelete", { "fg": s:red })
+" lewis6991/gitsigns.nvim
+call s:h("GitSignsAdd", { "fg": s:green })
+call s:h("GitSignsChange", { "fg": s:blue })
+call s:h("GitSignsDelete", { "fg": s:red })
 
 " neomake/neomake
 call s:h("NeomakeWarningSign", { "fg": s:yellow })
@@ -481,7 +481,7 @@ call s:h("DiagnosticUnderlineWarn", { "gui": "undercurl", "sp": s:yellow })
 call s:h("DiagnosticUnderlineInfo", { "gui": "undercurl", "sp": s:green })
 call s:h("DiagnosticUnderlineHint", { "gui": "undercurl", "sp": s:cyan })
 
-call s:h("LspReferenceText", {"bg": s:ref_blue})
+call s:h("LspReferenceText", {"bg": s:bg_blue})
 hi link LspReferenceRead LspReferenceText
 hi link LspReferenceWrite LspReferenceText
 

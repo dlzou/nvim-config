@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
           theme = require('lualine.themes.material'),
         },
         sections = {
+          lualine_b = {'branch', 'diagnostics'},
           lualine_c = {
             {'filename', path = 1, shorting_target = 50}
           },
@@ -73,6 +74,7 @@ return require('packer').startup(function(use)
           enable = true,
           disable = {
             "python",
+            "go",
           }
         },
       }
@@ -83,10 +85,6 @@ return require('packer').startup(function(use)
     'nvim-treesitter/playground',
     disable = true,
   }
-  
-  use 'rhysd/conflict-marker.vim'
-
-  use 'tpope/vim-fugitive'
 
   use { 
     'lukas-reineke/indent-blankline.nvim',
@@ -136,6 +134,10 @@ return require('packer').startup(function(use)
 
   use 'mbbill/undotree'
 
+  use 'tpope/vim-fugitive'
+
+  use 'rhysd/conflict-marker.vim'
+
   use {
     'neovim/nvim-lspconfig',
     config = function()
@@ -167,13 +169,21 @@ return require('packer').startup(function(use)
       }
     end,
   }
-  
+ 
   -- }}}
 
   -- Languages {{{
 
   -- Python
   use "Vimjas/vim-python-pep8-indent"
+
+  -- Go
+  use {
+    "ray-x/go.nvim",
+    config = function()
+      require('go').setup {}
+    end,
+  }
 
   -- }}}
 

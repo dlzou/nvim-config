@@ -16,6 +16,7 @@ set splitright
 set number
 set cursorline
 set colorcolumn=101
+set laststatus=3
 
 " Default tab settings, overridden by tpope/vim-sleuth
 set expandtab  " Use spaces insteads of tabs
@@ -43,7 +44,7 @@ nnoremap P P=`[
 xnoremap <C-c> "+y
 cnoremap <C-v> <C-r>+
 inoremap <C-v> <C-g>u<C-r>+
-inoremap <CR> <C-g>u<CR>
+inoremap <CR> <CR><C-g>u
 
 inoremap <C-d> <Del>
 inoremap <C-f> <Right>
@@ -66,7 +67,7 @@ nnoremap <leader>ft <cmd>NvimTreeToggle<CR>
 
 nnoremap <leader>gdh <cmd>diffget //2<CR>
 nnoremap <leader>gdl <cmd>diffget //3<CR>
-nnoremap <leader>gv <cmd>Gvdiffsplit<Space>
+nnoremap <leader>gv <cmd>Gvdiffsplit<CR>
 
 nnoremap <leader>n <cmd>noh<CR>
 
@@ -93,7 +94,7 @@ let g:startify_session_persistence = 1
 let g:AutoPairsCenterLine = 0
 let g:AutoPairsMultilineClose = 0
 
-let g:Illuminate_delay = 500
+let g:Illuminate_delay = 200
 
 let g:conflict_marker_begin = '^<<<<<<< .*$'
 let g:conflict_marker_end = '^>>>>>>> .*$'

@@ -17,7 +17,7 @@ local on_attach = function(client, bufnr)
     noremap = true,
     silent = true,
   }
-  buf_set_keymap('n', '<leader>ld', '<cmd>TroubleToggle<Space>lsp_definitions<CR>', opts)
+  buf_set_keymap('n', '<leader>ld', '<cmd>Telescope<Space>lsp_definitions<CR>', opts)
   buf_set_keymap('n', '<leader>ll', '<cmd>TroubleToggle<Space>document_diagnostics<CR>', opts)
   buf_set_keymap('n', '<leader>ln', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<leader>lr', '<cmd>TroubleToggle<Space>lsp_references<CR>', opts)
