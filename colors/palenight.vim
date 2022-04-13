@@ -74,7 +74,7 @@ endfunction
 let s:colors = palenight#GetColors()
 
 let s:red = s:colors.red
-let s:light_red = s:colors.light_red
+let s:error_red = s:colors.error_red
 let s:dark_red = s:colors.dark_red
 let s:bg_red = s:colors.bg_red
 let s:green = s:colors.green
@@ -108,7 +108,7 @@ call s:h("Constant", { "fg": s:cyan }) " any constant
 call s:h("String", { "fg": s:green }) " a string constant: "this is a string"
 call s:h("Character", { "fg": s:green }) " a character constant: 'c', '\n'
 call s:h("Number", { "fg": s:dark_yellow }) " a number constant: 234, 0xff
-call s:h("Boolean", { "fg": s:light_red }) " a boolean constant: TRUE, false
+call s:h("Boolean", { "fg": s:red }) " a boolean constant: TRUE, false
 call s:h("Float", { "fg": s:dark_yellow }) " a floating point constant: 2.3e10
 call s:h("Identifier", { "fg": s:white }) " any variable name
 call s:h("Function", { "fg": s:blue }) " function name (also: methods for classes)
@@ -136,7 +136,7 @@ call s:h("SpecialComment", { "fg": s:comment_grey }) " special things inside a c
 call s:h("Debug", {}) " debugging statements
 call s:h("Underlined", { "gui": "underline", "cterm": "underline" }) " text that stands out, HTML links
 call s:h("Ignore", {"fg": s:special_grey}) " left blank, hidden
-call s:h("Error", { "fg": s:red }) " any erroneous construct
+call s:h("Error", { "fg": s:error_red }) " any erroneous construct
 call s:h("Todo", { "fg": s:yellow }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 " }}}
@@ -154,7 +154,7 @@ call s:h("DiffAdd", { "bg": s:bg_green }) " diff mode: Added line
 call s:h("DiffChange", { "bg": s:bg_blue }) " diff mode: Changed line
 call s:h("DiffDelete", { "bg": s:bg_red }) " diff mode: Deleted line
 call s:h("DiffText", { "bg": s:black, "fg": s:yellow }) " diff mode: Changed text within a changed line
-call s:h("ErrorMsg", { "fg": s:red }) " error messages on the command line
+call s:h("ErrorMsg", { "fg": s:error_red }) " error messages on the command line
 call s:h("VertSplit", { "fg": s:vertsplit }) " the column separating vertically split windows
 call s:h("Folded", { "bg": s:cursor_grey, "fg": s:comment_grey }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
@@ -174,7 +174,7 @@ call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:purple }) " hit-enter prompt and yes/no questions
 call s:h("Search", { "fg": s:black, "bg": s:yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
 call s:h("SpecialKey", { "fg": s:special_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
-call s:h("SpellBad", { "fg": s:red, "gui": "underline", "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
+call s:h("SpellBad", { "fg": s:error_red, "gui": "underline", "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", { "fg": s:dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
@@ -230,9 +230,9 @@ call s:h("htmlEndTag", { "fg": s:cyan })
 call s:h("htmlH1", { "fg": s:white })
 call s:h("htmlLink", { "fg": s:purple })
 call s:h("htmlSpecialChar", { "fg": s:dark_yellow })
-call s:h("htmlSpecialTagName", { "fg": s:light_red })
+call s:h("htmlSpecialTagName", { "fg": s:red })
 call s:h("htmlTag", { "fg": s:cyan })
-call s:h("htmlTagName", { "fg": s:light_red })
+call s:h("htmlTagName", { "fg": s:red })
 
 " " Coffeescript
 " call s:h("coffeeExtendedOp", { "fg": s:purple })
@@ -307,12 +307,12 @@ call s:h("htmlTagName", { "fg": s:light_red })
 " call s:h("jsonBoolean", { "fg": s:red })
 " call s:h("jsonNumber", { "fg": s:dark_yellow })
 " call s:h("jsonQuote", { "fg": s:white })
-" call s:h("jsonMissingCommaError", { "fg": s:red, "gui": "reverse" })
-" call s:h("jsonNoQuotesError", { "fg": s:red, "gui": "reverse" })
-" call s:h("jsonNumError", { "fg": s:red, "gui": "reverse" })
+" call s:h("jsonMissingCommaError", { "fg": s:error_red, "gui": "reverse" })
+" call s:h("jsonNoQuotesError", { "fg": s:error_red, "gui": "reverse" })
+" call s:h("jsonNumError", { "fg": s:error_red, "gui": "reverse" })
 " call s:h("jsonString", { "fg": s:green })
-" call s:h("jsonStringSQError", { "fg": s:red, "gui": "reverse" })
-" call s:h("jsonSemicolonError", { "fg": s:red, "gui": "reverse" })
+" call s:h("jsonStringSQError", { "fg": s:error_red, "gui": "reverse" })
+" call s:h("jsonSemicolonError", { "fg": s:error_red, "gui": "reverse" })
 
 " Markdown
 call s:h("markdownCode", { "fg": s:green })
@@ -320,7 +320,7 @@ call s:h("markdownLinkReference", { "fg": s:comment_grey })
 call s:h("markdownJekyllFrontMatter", { "fg": s:comment_grey })
 call s:h("markdownCodeBlock", { "fg": s:green })
 call s:h("markdownCodeDelimiter", { "fg": s:green })
-call s:h("markdownHeadingDelimiter", { "fg": s:light_red })
+call s:h("markdownHeadingDelimiter", { "fg": s:red })
 call s:h("markdownRule", { "fg": s:comment_grey })
 call s:h("markdownHeadingRule", { "fg": s:comment_grey })
 call s:h("htmlH1", { "fg": s:blue })
@@ -334,13 +334,13 @@ call s:h("markdownId", { "fg": s:purple })
 call s:h("markdownBlockquote", { "fg": s:comment_grey })
 call s:h("markdownItalic", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
 call s:h("mkdBold", { "fg": s:yellow, "gui": "bold", "cterm": "bold" })
-call s:h("mkdInlineURL", { "fg": s:light_red })
+call s:h("mkdInlineURL", { "fg": s:red })
 call s:h("mkdListItem", { "fg": s:yellow })
-call s:h("markdownOrderedListMarker", { "fg": s:light_red })
+call s:h("markdownOrderedListMarker", { "fg": s:red })
 call s:h("markdownIdDeclaration", { "fg": s:blue })
 call s:h("mkdLink", { "fg": s:white })
 call s:h("markdownLinkDelimiter", { "fg": s:white })
-call s:h("mkdURL", { "fg": s:light_red })
+call s:h("mkdURL", { "fg": s:red })
 
 " " Ruby
 " call s:h("rubyAccess", { "fg": s:cyan })
@@ -471,12 +471,12 @@ call s:h("debugBreakpoint", { "fg": s:blue_purple })
 call s:h("debugPC", { "bg": s:blue_purple, "fg": s:black })
 
 " LSP
-call s:h("DiagnosticError", { "fg": s:red })
+call s:h("DiagnosticError", { "fg": s:error_red })
 call s:h("DiagnosticWarn", { "fg": s:yellow })
 call s:h("DiagnosticInfo", { "fg": s:green })
 call s:h("DiagnosticHint", { "fg": s:cyan })
 
-call s:h("DiagnosticUnderlineError", { "gui": "undercurl", "sp": s:red })
+call s:h("DiagnosticUnderlineError", { "gui": "undercurl", "sp": s:error_red })
 call s:h("DiagnosticUnderlineWarn", { "gui": "undercurl", "sp": s:yellow })
 call s:h("DiagnosticUnderlineInfo", { "gui": "undercurl", "sp": s:green })
 call s:h("DiagnosticUnderlineHint", { "gui": "undercurl", "sp": s:cyan })
