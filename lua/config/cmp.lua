@@ -36,7 +36,7 @@ cmp.setup {
         fallback()
       end
     end, {'i', 's'}),
-    ['<C-e>'] = cmp.mapping.abort(),
+    ['<C-z>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({select = true}),
   },
   sources = cmp.config.sources({

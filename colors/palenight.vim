@@ -485,6 +485,8 @@ call s:h("LspReferenceText", {"bg": s:bg_blue})
 hi link LspReferenceRead LspReferenceText
 hi link LspReferenceWrite LspReferenceText
 
+call s:h("LspSignatureActiveParameter", { "bg": s:green, "fg": s:black })
+
 " rhysd/conflict-marker.vim
 call s:h("ConflictMarkerBegin", { "bg": s:bg_red })
 call s:h("ConflictMarkerOurs", { "bg": s:bg_red })

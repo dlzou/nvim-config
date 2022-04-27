@@ -39,6 +39,7 @@ xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 
+nnoremap <C-z> <nop>
 nnoremap p p=`]
 nnoremap P P=`[
 xnoremap <C-c> "+y
@@ -67,7 +68,8 @@ nnoremap <leader>ft <cmd>NvimTreeToggle<CR>
 
 nnoremap <leader>gdh <cmd>diffget //2<CR>
 nnoremap <leader>gdl <cmd>diffget //3<CR>
-nnoremap <leader>gv <cmd>Gvdiffsplit<CR>
+nnoremap <leader>gdv <cmd>Gvdiffsplit!<CR>
+nnoremap <leader>gv <cmd>DiffviewOpen<CR>
 
 nnoremap <leader>n <cmd>noh<CR>
 

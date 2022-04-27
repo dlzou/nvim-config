@@ -139,6 +139,14 @@ return require('packer').startup(function(use)
   use 'rhysd/conflict-marker.vim'
 
   use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('diffview').setup {}
+    end,
+  }
+
+  use {
     'neovim/nvim-lspconfig',
     config = function()
       require('config.lsp')
@@ -157,6 +165,8 @@ return require('packer').startup(function(use)
       require('config.cmp')
     end,
   }
+
+  use 'ray-x/lsp_signature.nvim'
 
   use 'RRethy/vim-illuminate'
 

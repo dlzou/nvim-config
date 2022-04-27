@@ -23,6 +23,16 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>lr', '<cmd>TroubleToggle<Space>lsp_references<CR>', opts)
   buf_set_keymap('n', '<leader>ls', '<cmd>Telescope<Space>lsp_workspace_symbols<Space>query=', opts)
 
+  require('lsp_signature').on_attach({
+    bind = true,
+    hint_enable = false,
+    max_height = 8,
+    max_width = 100,
+    handler_opts = {
+      border = 'none',
+    },
+    toggle_key = '<C-z>',
+  })
   require('illuminate').on_attach(client)
   vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable=false, scope='cursor', close_events={'CursorMoved', 'InsertEnter', 'BufLeave', 'WinLeave', 'WinScrolled'}})]]
 end
