@@ -45,6 +45,7 @@ telescope.setup {
       layout_config = {
         height = 20,
       },
+      find_command = {'rg', '--files', '--hidden', '-g', '!.git/'}
     },
     live_grep = {
       theme = 'ivy',

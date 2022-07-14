@@ -179,7 +179,19 @@ return require('packer').startup(function(use)
       }
     end,
   }
- 
+
+  use {
+    'mfussenegger/nvim-dap',
+    config = function()
+      require('config.dap')
+    end,
+  }
+
+  use {
+    'mfussenegger/nvim-dap-python',
+    requires = 'mfussenegger/nvim-dap',
+  }
+
   -- }}}
 
   -- Languages {{{
