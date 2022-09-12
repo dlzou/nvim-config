@@ -187,17 +187,17 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use {
-    'mfussenegger/nvim-dap-python',
-    requires = 'mfussenegger/nvim-dap',
-  }
-
   -- }}}
 
   -- Languages {{{
 
   -- Python
   use "Vimjas/vim-python-pep8-indent"
+
+  -- use {
+  --   'mfussenegger/nvim-dap-python',
+  --   requires = 'mfussenegger/nvim-dap',
+  -- }
 
   -- Go
   use {

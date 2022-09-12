@@ -16,7 +16,7 @@ set splitright
 set number
 set cursorline
 set colorcolumn=101
-set laststatus=3
+" set laststatus=3
 
 " Default tab settings, overridden by tpope/vim-sleuth
 set expandtab  " Use spaces insteads of tabs

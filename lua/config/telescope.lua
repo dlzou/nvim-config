@@ -53,6 +53,12 @@ telescope.setup {
         height = 20,
       },
     },
+    lsp_definitions = {
+      theme = 'ivy',
+      layout_config = {
+        height = 20,
+      },
+    },
     lsp_workspace_symbols = {
       theme = 'ivy',
       layout_config = {
